@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/flexbox.scss';
+@import './scss/vendor_prefixes.scss';
+
+// Colors
+$primary: #213743;
+$alt: #e5696a;
+$grey: #8c969c;
+$dark: #202032;
+$green: #0cb799;
+$light: #ebebeb;
+
+// Definitions
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-justify-content-center, .center-h {
+  justify-content: center;
+}
+
+.flex-align-items-center, .center-v {
+  align-items: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}

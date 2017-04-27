@@ -10,8 +10,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
 @NgModule({
   imports: [
     CommonModule,
-    StaticpagesModule
+    StaticPagesRoutingModule
   ],
-  declarations: [HomeComponent, AboutComponent, ContactComponent, NotfoundComponent]
+  declarations: [
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    NotfoundComponent
+  ]
 })
 export class StaticpagesModule { }

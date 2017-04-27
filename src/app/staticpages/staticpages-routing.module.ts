@@ -5,8 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 const staticRoutes = [
-  { path: 'about', },
-  { path: 'contact', },
+  // { path: 'about', },
+  // { path: 'contact', },
   { path: '', component: HomeComponent },
   { path: '**', component: NotfoundComponent }
 ];

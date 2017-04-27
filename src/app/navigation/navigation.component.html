@@ -1,0 +1,6 @@
+<div class="navigation">
+  <div *ngFor="let item of menuItems"
+    class="item {{item.pos}}" routerLink="{{item.url}}">
+    <span>{{ item.label }}</span>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+@import '../../styles.scss';
+
+$breadth: 42px;
+
+.navigation {
+  .item {
+    background-color: white;
+    position: fixed;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+
+    span {
+      transition: bottom 0.5s, left 0.5s, top 0.5s, right 0.5s,
+        color 0.5s;
+      position: relative;
+    }
+
+    &:hover {
+      background-color: $alt;
+      span {
+        color: $alt;
+      }
+    }
+
+    &.top {
+      top: 0;
+      span { top: 0; }
+      &:hover {
+        span { top: $breadth + 12px; }
+      }
+    }
+    &.right {
+      right: 0;
+      span { right: 0; }
+      &:hover {
+        span { right: $breadth + 12px; }
+      }
+    }
+    &.bottom {
+      bottom: 0;
+      span { bottom: 0; }
+      &:hover {
+        span { bottom: $breadth + 12px; }
+      }
+    }
+    &.left {
+      left: 0;
+      span { left: 0; }
+      &:hover {
+        span { left: $breadth + 12px; }
+      }
+    }
+
+    &.top, &.bottom {
+      width: 100%;
+      text-align: center;
+      height: $breadth;
+    }
+
+    &.right, &.left {
+      height: 100%;
+      width: $breadth;
+      span {
+        @include transform(rotate(-90deg));
+      }
+    }
+  }
+}

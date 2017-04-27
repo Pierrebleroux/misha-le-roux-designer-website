@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+
+$homeMargin: 45px;
+.home {
+  color: white;
+  background-color: $primary;
+  // max-width: calc(100% - #{$homeMargin*2});
+  // max-height: calc(100% - #{$homeMargin*2});
+
+  .arrows {
+    width: 40px;
+    color: white;
+  }
+}
