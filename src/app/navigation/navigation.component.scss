@@ -1,37 +1,58 @@
 @import '../../styles.scss';
 
-$breadth: 42px;
-$dist: 18px;
+$breadth: 40px;
+$dist: 2px;
 
 .navigation {
   .item {
     background-color: white;
     position: fixed;
+    color: $grey;
+    outline: none;
+
     @include flexbox();
     @include justify-content(center);
     @include align-items(center);
 
     span {
-      // transition: bottom 0.5s, left 0.5s, top 0.5s, right 0.5s, color 0.5s;
-      position: relative;
-      color: $alt;
-      font-weight: bold;
-      font-size: 1.6em;
+      cursor: pointer;
       text-transform: uppercase;
+      font-weight: bold;
+    }
 
-      &:hover {
-        font-size: 1.75em;
+    &.home {
+      span {
+        // transition: font-size 0.5s;
+        position: relative;
+        color: $alt;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-transform: uppercase;
+
+        &:hover {
+          font-size: 1.75em;
+          &::after, &::before {
+            height: $dist + 8px;
+          }
+        }
       }
 
-      &::after, &::before {
+      &.bottom span::after, &.top span::before,
+      &.right span::after, &.left span::before {
         content: '';
         width: 2px;
-        height: $dist;
+        height: $dist + 18px;
         display: block;
         background-color: $alt;
         margin: 0 auto;
       }
     }
+
+    &.active {
+      color: $alt;
+      text-decoration: line-through;
+    }
+
 
     &.top {
       top: 0;
