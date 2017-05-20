@@ -1,6 +1,7 @@
 @import '../../styles.scss';
 
 $breadth: 42px;
+$dist: 18px;
 
 .navigation {
   .item {
@@ -11,45 +12,42 @@ $breadth: 42px;
     @include align-items(center);
 
     span {
-      transition: bottom 0.5s, left 0.5s, top 0.5s, right 0.5s,
-        color 0.5s;
+      // transition: bottom 0.5s, left 0.5s, top 0.5s, right 0.5s, color 0.5s;
       position: relative;
-    }
+      color: $alt;
+      font-weight: bold;
+      font-size: 1.6em;
+      text-transform: uppercase;
 
-    &:hover {
-      background-color: $alt;
-      span {
-        color: $alt;
+      &:hover {
+        font-size: 1.75em;
+      }
+
+      &::after, &::before {
+        content: '';
+        width: 2px;
+        height: $dist;
+        display: block;
+        background-color: $alt;
+        margin: 0 auto;
       }
     }
 
     &.top {
       top: 0;
-      span { top: 0; }
-      &:hover {
-        span { top: $breadth + 12px; }
-      }
+      span { top: $breadth + $dist; }
     }
     &.right {
       right: 0;
-      span { right: 0; }
-      &:hover {
-        span { right: $breadth + 12px; }
-      }
+      span { right: $breadth + $dist; }
     }
     &.bottom {
       bottom: 0;
-      span { bottom: 0; }
-      &:hover {
-        span { bottom: $breadth + 12px; }
-      }
+      span { bottom: $breadth + $dist; }
     }
     &.left {
       left: 0;
-      span { left: 0; }
-      &:hover {
-        span { left: $breadth + 12px; }
-      }
+      span { left: $breadth + $dist; }
     }
 
     &.top, &.bottom {

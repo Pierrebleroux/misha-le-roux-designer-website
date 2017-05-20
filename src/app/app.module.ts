@@ -19,7 +19,6 @@ import { NavigationComponent } from './navigation/navigation.component';
     FormsModule,
     HttpModule,
     StaticpagesModule,
-
     AppRoutingModule
   ],
   providers: [],

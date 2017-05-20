@@ -5,12 +5,14 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { StaticPagesRoutingModule } from './staticpages-routing.module';
+import { BlogModule } from '../blog/blog.module';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    StaticPagesRoutingModule
+    BlogModule,
+    StaticPagesRoutingModule,
   ],
   declarations: [
     HomeComponent,

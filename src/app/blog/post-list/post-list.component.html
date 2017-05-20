@@ -1,0 +1,4 @@
+<div *ngFor="let post of (blogService.blogPosts$ | async)">
+  <div [innerHTML]="post.description"></div>
+  <!--<img [src]="post.meta.image.url" />-->
+</div>
