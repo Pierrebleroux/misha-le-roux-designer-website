@@ -1,7 +1,13 @@
 <div class="navigation">
-  <a *ngFor="let item of menuItems"
-    class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}"
-    [href]="item.url || item.externalUrl" [target]="item.target || '_self'">
-    <span>{{ item.label }}</span>
-  </a>
+  <div *ngFor="let item of menuItems">
+    <a class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}"
+      *ngIf="item.externalUrl"
+      [href]="item.externalUrl" [target]="item.target || '_self'">
+      <span>{{ item.label }}</span>
+    </a>
+    <a class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}"
+      *ngIf="item.url" [routerLink]="item.url">
+      <span>{{ item.label }}</span>
+    </a>
+  </div>
 </div>
