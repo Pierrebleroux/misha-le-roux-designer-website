@@ -5,17 +5,22 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   template: `
-    <app-work
-      [project]="project | async"
-    ></app-work>
-  `
+    <div class="back-home" [routerLink]="['/']">Home</div>
+    <div class="project-menu">
+      <div class="item" *ngFor="let p of work" [routerLink]="['/work', p.fields.Identifier]">
+        <span>{{p.fields.Title}}</span>
+      </div>
+    </div>
+    <app-work [project]="project | async"></app-work>
+  `,
+  styleUrls: ['./work.component.scss']
 })
 export class WorkContainer implements OnInit {
 
   private routeSub;
   private workSub;
   private projectName;
-  private work;
+  public work;
   public project = new BehaviorSubject<Object>(null);
 
   public static NOT_EXIST_PROJECT = {

@@ -1,6 +1,7 @@
 <div class="navigation">
-  <div *ngFor="let item of menuItems"
-    class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}" routerLink="{{item.url}}">
+  <a *ngFor="let item of menuItems"
+    class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}"
+    [href]="item.url || item.externalUrl" [target]="item.target || '_self'">
     <span>{{ item.label }}</span>
-  </div>
+  </a>
 </div>

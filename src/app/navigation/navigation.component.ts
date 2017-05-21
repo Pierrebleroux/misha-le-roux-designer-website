@@ -11,7 +11,7 @@ export class NavigationComponent {
     { pos: 'top', label: 'Work', url: '/work' },
     { pos: 'right', label: 'Contact', url: '/contact' },
     { pos: 'bottom', label: 'About', url: '/about' },
-    { pos: 'left', label: 'Blog', url: '/blog' }
+    { pos: 'left', label: 'Blog', externalUrl: 'https://medium.com/@mishaleroux', target: '_blank' }
   ];
 
   path = '';

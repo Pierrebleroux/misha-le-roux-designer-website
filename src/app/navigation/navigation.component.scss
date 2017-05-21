@@ -9,6 +9,7 @@ $dist: 2px;
     position: fixed;
     color: $grey;
     outline: none;
+    text-decoration: none;
 
     @include flexbox();
     @include justify-content(center);
@@ -39,12 +40,13 @@ $dist: 2px;
         display: block;
         background-color: $alt;
         margin: 0 auto;
-        transition: width 0.5s;
+        transition: width 0.5s, height 0.5s;
       }
 
       span:hover {
         &::after, &::before {
           width: 100px;
+          height: 2px;
         }
       }
     }

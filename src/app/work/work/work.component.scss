@@ -1,6 +1,5 @@
-.project {
-  margin: 48px;
-  overflow: auto;
+.avoid-nav {
+  padding: 48px;
 }
 
 .content {
@@ -25,5 +24,44 @@
 
   > div {
     margin: 1em 0;
+  }
+}
+
+.project-menu {
+  top: 48px;
+  right: 100px;
+  position: fixed;
+
+  span {
+    display: none;
+  }
+
+  .item {
+    display: inline-block;
+    margin: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    border: 2px solid white;
+
+    span {
+      display: none;
+      position: absolute;
+      top: 40px;
+      background-color: #444;
+      color: white;
+      padding: 4px;
+      // display: block;
+      transform: translate(-50%, 0);
+      width: 100px;
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: white;
+      span {
+        display: block;
+      }
+    }
   }
 }

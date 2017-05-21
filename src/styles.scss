@@ -20,6 +20,7 @@ $light: #ebebeb;
 body, html {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  color: $primary;  
 }
 
 .d-flex {
@@ -44,6 +45,10 @@ body, html {
   flex-wrap: wrap;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .full-height {
   height: 100%;
 }
@@ -54,6 +59,10 @@ body, html {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .half-width {
@@ -80,12 +89,16 @@ body, html {
   width: 80%;
 }
 
+.w-40p {
+  width: 40%;
+}
+
 .left-margin {
   margin-left: 42px;
 }
 
 .back-home {
-  position: absolute;
+  position: fixed;
   top: 52px;
   left: 52px;
   cursor: pointer;
@@ -109,6 +122,11 @@ button {
   color: white;
   font-size: 1em;
   font-weight: bold;
+
+  &:hover {
+    background-color: white;
+    color: $primary;
+  }
 }
 
 button.primary {
@@ -135,4 +153,32 @@ button.primary {
 
 .upper-case {
   text-transform: uppercase;
+}
+
+.static {
+  p {
+    margin: 1em 0;
+    border-left: 4px solid $alt;
+    padding-left: 1em;
+    color: $grey;
+  }
+
+  h1 {
+    span {
+      position: relative;
+    }
+
+    span::after {
+      width: 30px;
+      height: 30px;
+      background-image: url('/assets/arrows-primary.svg');
+      background-repeat: no-repeat;
+
+      content: '';
+      display: block;
+      position: absolute;
+      top: -16px;
+      right: -20px;
+    }
+  }
 }

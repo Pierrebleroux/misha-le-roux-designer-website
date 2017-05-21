@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "cd dist/ && surge --domain misha.teamatomic.co",
-    "prod": "ng build --aot -prod --env=prod && npm run deploy"
+    "prod": "ng build --aot -prod --deployUrl misha.teamatomic.co && npm run deploy"
   },
   "private": true,
   "dependencies": {
