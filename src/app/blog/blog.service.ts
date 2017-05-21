@@ -20,5 +20,4 @@ export class BlogService {
       .map(res => res.json())
       .subscribe((res) => this.blogPosts.next(res));
   }
-
 }

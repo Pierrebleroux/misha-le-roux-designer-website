@@ -28,13 +28,7 @@ $dist: 2px;
         font-weight: bold;
         font-size: 1.2em;
         text-transform: uppercase;
-
-        &:hover {
-          font-size: 1.75em;
-          &::after, &::before {
-            height: $dist + 8px;
-          }
-        }
+        text-align: center;
       }
 
       &.bottom span::after, &.top span::before,
@@ -45,6 +39,13 @@ $dist: 2px;
         display: block;
         background-color: $alt;
         margin: 0 auto;
+        transition: width 0.5s;
+      }
+
+      span:hover {
+        &::after, &::before {
+          width: 100px;
+        }
       }
     }
 
@@ -78,6 +79,7 @@ $dist: 2px;
     }
 
     &.right, &.left {
+      top: 0;
       height: 100%;
       width: $breadth;
       span {

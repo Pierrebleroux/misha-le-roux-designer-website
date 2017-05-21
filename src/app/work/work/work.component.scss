@@ -1,0 +1,29 @@
+.project {
+  margin: 48px;
+  overflow: auto;
+}
+
+.content {
+  color: white;
+  .title {
+    font-size: xx-large;
+    font-weight: bold;
+  }
+
+  .sub-title {
+    font-weight: lighter;
+  }
+
+  .sub-content {
+    border-left: 4px solid white;
+    padding-left: 12px;
+    
+    > div {
+      margin: 1em 0;
+    }
+  }
+
+  > div {
+    margin: 1em 0;
+  }
+}

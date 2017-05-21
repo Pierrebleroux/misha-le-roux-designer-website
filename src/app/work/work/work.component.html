@@ -1,0 +1,27 @@
+<div 
+  class="full-height full-width bg-light d-flex-center flex-wrap project"
+  [style.background-color]="project && project.fields.BackgroundColor"
+>
+  <div *ngIf="!project">
+    Loading awesome work pieces for you to enjoy.
+  </div>
+  <div *ngIf="project">
+    <img [src]="project.fields.PrimaryImage[0].url" />
+  </div>
+  <div *ngIf="project">
+    <div class="content max-w-400">
+      <div class="title">{{ project.fields.Title }}</div>
+      <div class="sub-title">{{ project.fields.Subtitle }}</div>
+      <div class="sub-content">
+        <div class="summary">{{ project.fields.Summary}}</div>
+        <div *ngIf="project.fields.DesignBy">Designed by: {{ project.fields.DesignBy }}</div>
+        <div *ngIf="project.fields.MyRole">My role: {{ project.fields.MyRole }}</div>
+      </div>
+    </div>
+    <div>
+      <button>See Project</button>
+      <button>See on Behance</button>
+      <button>See Case Study</button>
+    </div>
+  </div>
+</div>

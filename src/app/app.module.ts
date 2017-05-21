@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { WorkModule } from './work/work.module';  
 import { StaticpagesModule } from './staticpages/staticpages.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,6 +19,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    WorkModule,
     StaticpagesModule,
     AppRoutingModule
   ],

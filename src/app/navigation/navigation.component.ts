@@ -19,7 +19,7 @@ export class NavigationComponent {
   constructor(private router:Router) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.path = router.url.substr(1);
+        this.path = router.url.split('/')[1];
         if (this.path === '') {
           this.path = 'home';
         }
