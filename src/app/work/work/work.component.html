@@ -2,10 +2,10 @@
   class="full-height bg-light"
   [style.background-color]="project && project.fields.BackgroundColor"
 >
-  <div *ngIf="!project">
-    Loading awesome work pieces for you to enjoy.
-  </div>
   <div class="full-height d-flex-center flex-wrap">
+    <div *ngIf="!project">
+      Loading awesome work pieces for you to enjoy.
+    </div>
     <div *ngIf="project" class="avoid-nav w-40p text-right">
       <img [src]="project.fields.PrimaryImage[0].url" />
     </div>

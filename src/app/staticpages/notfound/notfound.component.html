@@ -1,3 +1,15 @@
-<p>
-  notfound works!
-</p>
+<div class="full-height full-width bg-light d-flex-center static">
+  <div class="back-home" [routerLink]="['/']">Home</div>
+  <div class="w-80p max-w-800">
+    <h1 class="upper-case"><span>404 Not Found</span></h1>
+    <p>
+      The page you are looking for is not here.<br>
+      If it was, I am sorry about that.
+    </p>
+    <p>
+      I would suggest viewing some of these pages:
+    </p>
+    <button [routerLink]="['/']" class="primary">Home</button>
+    <button [routerLink]="['/work']" class="primary">Work</button>
+  </div>
+</div>
