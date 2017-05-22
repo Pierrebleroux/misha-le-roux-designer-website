@@ -65,6 +65,12 @@ body, html {
   text-align: right;
 }
 
+.mtext-center {
+  @media(max-width: 600px) {
+    text-align: center;
+  }
+}
+
 .half-width {
   width: 50%;
 }
@@ -93,8 +99,17 @@ body, html {
   width: 40%;
 }
 
+.mw-90p {
+  @media(max-width: 600px) {
+    width: 90%;
+  }
+}
+
 .left-margin {
   margin-left: 42px;
+  @media(max-width: 600px) {
+    margin-left: 0;
+  }
 }
 
 .back-home {
@@ -111,6 +126,12 @@ body, html {
     content: '';
     display: inline-block;
     margin-right: 6px;
+  }
+
+  @media(max-width: 600px) {
+    top: 150px;
+    left: 20px;
+    position: absolute;
   }
 }
 

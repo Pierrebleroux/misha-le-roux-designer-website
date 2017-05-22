@@ -2,14 +2,14 @@
   class="full-height bg-light"
   [style.background-color]="project && project.fields.BackgroundColor"
 >
-  <div class="full-height d-flex-center flex-wrap">
+  <div class="full-height d-flex-center flex-wrap work-container">
     <div *ngIf="!project">
       Loading awesome work pieces for you to enjoy.
     </div>
-    <div *ngIf="project" class="avoid-nav w-40p text-right">
-      <img [src]="project.fields.PrimaryImage[0].url" />
+    <div *ngIf="project" class="avoid-nav w-40p mw-90p text-right mtext-center">
+      <img class="mw-90p" [src]="project.fields.PrimaryImage[0].url || ''" />
     </div>
-    <div *ngIf="project" class="avoid-nav w-40p">
+    <div *ngIf="project" class="avoid-nav w-40p mw-90p">
       <div class="content max-w-400">
         <div class="title">{{ project.fields.Title }}</div>
         <div class="sub-title">{{ project.fields.Subtitle }}</div>

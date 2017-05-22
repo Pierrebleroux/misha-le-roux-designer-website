@@ -89,4 +89,32 @@ $dist: 2px;
       }
     }
   }
+
+  @media(max-width: 600px) {
+    padding: 0.5em;
+    .item {
+      &, &.home, &.left, &.right, &.top &.bottom {
+        position: relative;
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
+        width: auto;
+
+        &, &.home {
+          span {
+            transform: none;
+            top: initial;
+            left: initial;
+            right: initial;
+            bottom: initial;
+
+            &::before, &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

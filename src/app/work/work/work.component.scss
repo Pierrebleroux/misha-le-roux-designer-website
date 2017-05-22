@@ -1,5 +1,16 @@
 .avoid-nav {
   padding: 48px;
+
+  @media(max-width: 600px) {
+    padding: 0;
+  }
+}
+
+.work-container {
+  @media(max-width: 600px) {
+    padding-top: 3em;
+    height: auto;
+  }
 }
 
 .content {
@@ -63,5 +74,11 @@
         display: block;
       }
     }
+  }
+
+  @media(max-width: 600px) {
+    top: 146px;
+    right: 20px;
+    position: absolute;
   }
 }
