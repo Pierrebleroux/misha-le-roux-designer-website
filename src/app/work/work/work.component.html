@@ -1,10 +1,10 @@
 <div 
-  class="full-height bg-light"
+  class="full-height bg-primary"
   [style.background-color]="project && project.fields.BackgroundColor"
 >
   <div class="full-height d-flex-center flex-wrap work-container">
-    <div *ngIf="!project">
-      Loading awesome work pieces for you to enjoy.
+    <div *ngIf="!project" class="w-80p text-center color-white">
+      <h2>Loading awesome work pieces for you to enjoy...</h2>
     </div>
     <div *ngIf="project" class="avoid-nav w-40p mw-90p text-right mtext-center">
       <img class="mw-90p" [src]="project.fields.PrimaryImage[0].url || ''" />

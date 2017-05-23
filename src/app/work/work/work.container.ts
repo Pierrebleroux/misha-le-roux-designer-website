@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   template: `
     <div class="back-home" [routerLink]="['/']">Home</div>
     <div class="project-menu">
-      <div class="item" *ngFor="let p of work" [routerLink]="['/work', p.fields.Identifier]">
+      <div *ngFor="let p of work" [routerLink]="['/work', p.fields.Identifier]" class="item" [class.active]="p.fields.Identifier == projectName">
         <span>{{p.fields.Title}}</span>
       </div>
     </div>
@@ -19,7 +19,7 @@ export class WorkContainer implements OnInit {
 
   private routeSub;
   private workSub;
-  private projectName;
+  public projectName;
   public work;
   public project = new BehaviorSubject<Object>(null);
 
