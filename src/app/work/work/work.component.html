@@ -4,12 +4,13 @@
 >
   <div class="full-height d-flex-center flex-wrap work-container">
     <div *ngIf="!project" class="w-80p text-center color-white">
-      <h2>Loading awesome work pieces for you to enjoy...</h2>
+      <spring-loader></spring-loader>
     </div>
-    <div *ngIf="project" class="avoid-nav w-40p mw-90p text-right mtext-center">
-      <img class="mw-90p" [src]="project.fields.PrimaryImage[0].url || ''" />
+    <div *ngIf="project" class="w-50p mw-90p text-center mtext-center">
+      <spring-loader *ngIf="loading"></spring-loader>
+      <img class="mw-90p" [src]="project.fields.PrimaryImage[0].url" [hidden]="loading" (load)="onLoad()" />
     </div>
-    <div *ngIf="project" class="avoid-nav w-40p mw-90p">
+    <div *ngIf="project" class="w-40p mw-90p">
       <div class="content max-w-400">
         <div class="title">{{ project.fields.Title }}</div>
         <div class="sub-title">{{ project.fields.Subtitle }}</div>

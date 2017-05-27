@@ -8,11 +8,14 @@ import { StaticPagesRoutingModule } from './staticpages-routing.module';
 import { BlogModule } from '../blog/blog.module';
 import { NotfoundComponent } from './notfound/notfound.component';
 
+import { AngularLoaders } from 'angular-loaders';
+
 @NgModule({
   imports: [
     CommonModule,
     BlogModule,
     StaticPagesRoutingModule,
+    AngularLoaders.forRoot()
   ],
   declarations: [
     HomeComponent,

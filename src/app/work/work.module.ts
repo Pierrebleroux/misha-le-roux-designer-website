@@ -6,10 +6,13 @@ import { WorkContainer } from './work/work.container';
 import { WorkRoutingModule } from './work-routing.module';
 import { WorkService } from './work.service';
 
+import { AngularLoaders } from 'angular-loaders';
+
 @NgModule({
   imports: [
     CommonModule,
-    WorkRoutingModule
+    WorkRoutingModule,
+    AngularLoaders.forRoot()
   ],
   declarations: [
     WorkComponent,
