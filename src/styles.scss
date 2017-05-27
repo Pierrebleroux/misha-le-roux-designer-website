@@ -152,7 +152,8 @@ body, html {
 
 button {
   background-color: transparent;
-  padding: 0.8em 1.8em;
+  padding: 0.8em 2em;
+  margin: 0.2em;
   border: 3px solid white;
 
   color: white;
@@ -221,4 +222,35 @@ button.primary {
 
 .color-white {
   color: white;
+}
+
+.arrow {
+  $size: 12px;
+  border-style: solid;
+  &.white {
+    border-color: white;
+  }
+  display: inline-block;
+  border-width: 0 3px 3px 0;
+  padding: $size;
+
+  &.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  &.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  &.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  &.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 }

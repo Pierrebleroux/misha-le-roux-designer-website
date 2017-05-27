@@ -17,7 +17,7 @@ $homeMargin: 45px;
   height: 100%;
 }
 
-@media(max-width: 600px) {
+@media(max-width: $mobileWidth) {
   img {
     width: 90%;
   }

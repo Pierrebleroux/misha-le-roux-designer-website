@@ -11,6 +11,14 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
         <span>{{p.fields.Title}}</span>
       </div>
     </div>
+    <div class="project-nav">
+      <div class="left-container" *ngIf="projectIndex > 0" [routerLink]="['/work', work[projectIndex-1].fields.Identifier]">
+        <div class="left white arrow small"></div>
+      </div>
+      <div class="right-container" *ngIf="work && (projectIndex < work.length - 1)" [routerLink]="['/work', work[projectIndex+1].fields.Identifier]"> 
+        <div class="right white arrow small" ></div>
+      </div>
+    </div>
     <app-work [project]="project | async"></app-work>
   `,
   styleUrls: ['./work.component.scss']
@@ -21,6 +29,7 @@ export class WorkContainer implements OnInit {
   private workSub;
   public projectName;
   public work;
+  public projectIndex = 0;
   public project = new BehaviorSubject<Object>(null);
 
   public static NOT_EXIST_PROJECT = {
@@ -42,7 +51,6 @@ export class WorkContainer implements OnInit {
     });
     this.workSub = this.workService.work$.subscribe((work) => {
       this.work = work;
-      console.log(work);
       this.updateProject();
     });
   }
@@ -54,8 +62,8 @@ export class WorkContainer implements OnInit {
 
   updateProject() {
     if (this.projectName && this.work) {
-      const pos = this.work.map((p) => p.fields.Identifier).indexOf(this.projectName);
-      this.project.next(this.work[pos] || WorkContainer.NOT_EXIST_PROJECT);
+      this.projectIndex = this.work.map((p) => p.fields.Identifier).indexOf(this.projectName);
+      this.project.next(this.work[this.projectIndex] || WorkContainer.NOT_EXIST_PROJECT);
     } else if (this.work) {
       this.router.navigate(['/work', this.work[0].fields.Identifier]);
     }

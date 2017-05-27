@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .avoid-nav {
   padding: 48px;
 
@@ -83,6 +85,34 @@
     top: 146px;
     right: 20px;
     position: absolute;
+  }
+}
+
+.project-nav {
+  .left-container {
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    padding: 8px;
+
+    @media(max-width: $mobileWidth) {
+      left: 12px;
+    }
+  }
+
+  .right-container {
+    padding: 8px;
+    overflow: hidden;    
+    cursor: pointer;
+    position: absolute;
+    right: 52px;
+    top: 50%;
+
+    @media(max-width: $mobileWidth) {
+      right: 12px;
+    }
   }
 }
 
