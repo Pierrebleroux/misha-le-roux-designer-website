@@ -27,9 +27,6 @@
   }
 
   .sub-content {
-    border-left: 4px solid white;
-    padding-left: 12px;
-    
     > div {
       margin: 1em 0;
     }
@@ -55,19 +52,19 @@
     width: 12px;
     height: 12px;
     border-radius: 20px;
-    border: 2px solid white;
+    border: 1px solid white;
 
     span {
       display: none;
       position: absolute;
-      top: 40px;
-      background-color: #444;
-      color: white;
-      padding: 4px;
+      top: 28px;
+      // background-color: #444;
+      color: $primary;
       // display: block;
       transform: translate(-50%, 0);
       width: 100px;
       text-align: center;
+      font-size: 12px;
     }
 
     &:hover, &.active {
@@ -118,4 +115,8 @@
 
 img {
   max-width: 100%;
+}
+
+.summary {
+  font-style: italic;
 }

@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
-$breadth: 40px;
-$dist: 2px;
+$breadth: 24px;
+$dist: 12px;
 
 .navigation {
   .item {
@@ -19,6 +19,8 @@ $dist: 2px;
       cursor: pointer;
       text-transform: uppercase;
       font-weight: bold;
+      font-size: 12px;
+      transition: border 0.5s;
     }
 
     &.home {
@@ -35,18 +37,46 @@ $dist: 2px;
       &.bottom span::after, &.top span::before,
       &.right span::after, &.left span::before {
         content: '';
-        width: 2px;
-        height: $dist + 18px;
+        width: 1px;
+        height: $dist + 12px;
         display: block;
         background-color: $alt;
         margin: 0 auto;
-        transition: width 0.5s, height 0.5s;
+        transition: width 0.5s, height 0.5s, border 0.5s, margin 0.5s;
       }
 
-      span:hover {
-        &::after, &::before {
-          width: 100px;
-          height: 2px;
+      &.bottom span::before, &.top span::after,
+      &.right span::before, &.left span::after {
+        content: '';
+        width: 0;
+        height: 1px;
+        display: block;
+        background-color: $alt;
+        margin: 0 auto;
+        transition: width 0.5s;
+      }
+
+      &.top, &.left {
+        span:hover {
+          &::before {
+            height: 0;
+            margin-top: $dist + 12px;
+          }
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      &.bottom, &.right {
+        span:hover {
+          &::after {
+            height: 0;
+            margin-top: $dist + 12px;
+          }
+          &::before {
+            width: 100%;
+          }
         }
       }
     }
@@ -71,7 +101,7 @@ $dist: 2px;
     }
     &.left {
       left: 0;
-      span { left: $breadth + $dist; }
+      span { left: $breadth + $dist; min-width: 180px; }
     }
 
     &.top, &.bottom {
