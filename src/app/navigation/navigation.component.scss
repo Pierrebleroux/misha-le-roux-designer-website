@@ -121,8 +121,13 @@ $dist: 12px;
   }
 
   @media(max-width: 600px) {
-    padding: 0.5em;
+    // position: absolute;
+    width: 100%;
     .item {
+      padding: 2px;
+      &.left span {
+        min-width: initial;
+      }
       &, &.home, &.left, &.right, &.top &.bottom {
         position: relative;
         top: initial;
