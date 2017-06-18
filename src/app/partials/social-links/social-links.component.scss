@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+.social-icons {
+  width: 190px;
+  padding: 10px 0;
+  text-align: center;
+
+  span, a {
+    border-bottom: 1px solid transparent;
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 0;
+      background-color: $primary;
+      transition: width 0.5s;
+      margin: 0 auto;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

@@ -272,3 +272,28 @@ button.primary {
 .small {
   font-size: 12px;
 }
+
+// Icons
+.icon {
+  width: 30px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: top;
+
+  &.behance {
+    background-image: url('/assets/icons/Behance_grey.svg');
+  }
+
+  &.facebook {
+    background-image: url('/assets/icons/Facebook_grey.svg');
+    height: 30px;
+  }
+
+  &.instagram {
+    background-image: url('/assets/icons/Instagram_grey.svg');
+  }
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
