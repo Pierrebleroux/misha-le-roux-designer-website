@@ -240,8 +240,15 @@ button.primary {
 .arrow {
   $size: 12px;
   border-style: solid;
+  cursor: pointer;
   &.white {
     border-color: white;
+  }
+  &.primary {
+    border-color: $primary;
+  }
+  &.alt {
+    border-color: $alt;
   }
   display: inline-block;
   border-width: 0 3px 3px 0;

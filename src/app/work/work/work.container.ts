@@ -12,12 +12,12 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
       </div>
     </div>
     <div class="project-nav">
-      <div class="left-container" *ngIf="projectIndex > 0" [routerLink]="['/work', work[projectIndex-1].fields.Identifier]">
+      <!-- <div class="left-container" *ngIf="projectIndex > 0" [routerLink]="['/work', work[projectIndex-1].fields.Identifier]">
         <div class="left white arrow small"></div>
       </div>
       <div class="right-container" *ngIf="work && (projectIndex < work.length - 1)" [routerLink]="['/work', work[projectIndex+1].fields.Identifier]"> 
         <div class="right white arrow small" ></div>
-      </div>
+      </div> -->
     </div>
     <app-work [project]="project | async"></app-work>
   `,
