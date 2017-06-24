@@ -8,7 +8,7 @@
     </div>
     <div *ngIf="project" class="w-50p mw-90p text-center mtext-center">
       <spring-loader *ngIf="loading"></spring-loader>
-      <img class="mw-90p" [src]="displayImage" [hidden]="loading" (load)="onLoad()" />
+      <img class="mw-90p work-image" [src]="displayImage" [hidden]="loading" (load)="onLoad()" />
       <div class="image-nav">
         <div (click)="changeImage(imageId-1)">
           <div class="left alt arrow small" ></div>
@@ -30,7 +30,6 @@
       </div>
       <div>
         <button *ngIf="project.fields.Website" [routerLink]="project.fields.Website" class="primary">Visit Website</button>
-        <br>
         <button *ngIf="project.fields.BehanceLink" [routerLink]="project.fields.BehanceLink" class="primary">View project on Behance</button>
         <!--<button *ngIf="project.fields.BlogPostLink" [routerLink]="project.fields.BlogPostLink">See Case Study</button>-->
       </div>
