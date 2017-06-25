@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 import { WorkModule } from './work/work.module';  
 import { StaticpagesModule } from './staticpages/staticpages.module';
@@ -21,7 +22,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     HttpModule,
     WorkModule,
     StaticpagesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

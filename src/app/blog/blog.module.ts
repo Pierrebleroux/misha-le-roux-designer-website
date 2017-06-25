@@ -4,9 +4,12 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
 import { BlogService } from './blog.service';
 
+import { BlogRoutingModule } from './blog-routing.module';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BlogRoutingModule
   ],
   declarations: [PostListComponent, PostComponent],
   exports: [

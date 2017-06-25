@@ -23,6 +23,8 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-loaders": "file:../../../Modules/angular/angular-loaders",
+    "angular2-useful-swiper": "^4.0.5",
     "core-js": "^2.4.1",
     "feedme": "^1.0.0",
     "rxjs": "^5.1.0",

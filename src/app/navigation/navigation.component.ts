@@ -8,10 +8,10 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class NavigationComponent {
   menuItems = [
-    { pos: 'top', label: 'Work', url: '/work' },
-    { pos: 'right', label: 'Contact', url: '/contact' },
-    { pos: 'bottom', label: 'About', url: '/about' },
-    { pos: 'left', label: 'Blog & Freebies', externalUrl: 'https://medium.com/@mishaleroux', target: '_blank' }
+    { pos: 'top', label: 'Work', id: 'work', url: '/work' },
+    { pos: 'right', label: 'Contact', id: 'contact', url: '/contact' },
+    { pos: 'bottom', label: 'About', id: 'about', url: '/about' },
+    { pos: 'left', label: 'Blog & Freebies', id: 'blog', url: '/blog' }
   ];
 
   path = '';

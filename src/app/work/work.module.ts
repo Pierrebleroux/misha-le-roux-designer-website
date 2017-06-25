@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PartialsModule } from '../partials/partials.module';
+import { SwiperModule } from 'angular2-useful-swiper';
+
 import { WorkComponent } from './work/work.component';
 import { WorkContainer } from './work/work.container';
 
@@ -12,6 +15,8 @@ import { AngularLoaders } from 'angular-loaders';
   imports: [
     CommonModule,
     WorkRoutingModule,
+    PartialsModule,
+    SwiperModule,
     AngularLoaders.forRoot()
   ],
   declarations: [

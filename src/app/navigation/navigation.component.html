@@ -5,7 +5,7 @@
       [href]="item.externalUrl" [target]="item.target || '_self'">
       <span>{{ item.label }}</span>
     </a>
-    <a class="item {{item.pos}} {{path}} {{path == item.label.toLowerCase() && 'active' || ''}}"
+    <a class="item {{item.pos}} {{path}} {{path == item.id.toLowerCase() && 'active' || ''}}"
       *ngIf="item.url" [routerLink]="item.url">
       <span>{{ item.label }}</span>
     </a>

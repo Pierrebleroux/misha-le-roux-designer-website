@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 import { WorkService } from '../work.service';
 
 @Component({
@@ -8,8 +9,28 @@ import { WorkService } from '../work.service';
 })
 export class WorkComponent implements OnChanges {
   @Input() project;
+  @ViewChild('usefulSwiper') swiperContainer;
+
   imageId: number = 0;
   displayImage: String;
+  config = {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 30,
+      misha_images: [],
+      grabCursor: true
+  };
+  showSwiper = true;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.showSwiper = false;
+      }
+    });
+  }
 
   loading: boolean = true
   onLoad() {
@@ -17,10 +38,15 @@ export class WorkComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.showSwiper = true;
     this.loading = true;
     this.imageId = 0;
     if (this.project) {
+      this.config.misha_images = this.project.fields.PrimaryImage;
       this.displayImage = this.project.fields.PrimaryImage[0].url
+    }
+    if (this.swiperContainer) {
+      this.swiperContainer.Swiper.slideTo(0);
     }
   }
 
@@ -33,5 +59,9 @@ export class WorkComponent implements OnChanges {
         this.imageId = num % this.project.fields.PrimaryImage.length;
         this.displayImage = this.project.fields.PrimaryImage[this.imageId].url;
     }
+  }
+
+  hideSwiper() {
+    this.showSwiper = false;
   }
 }

@@ -1,4 +1,23 @@
-<div *ngFor="let post of (blogService.blogPosts$ | async)">
-  <div [innerHTML]="post.description"></div>
+<div class="full-height full-width bg-light">
+  <div class="back-home" [routerLink]="['/']">Home</div>
+  <!--<div [innerHTML]="post.description"></div>-->
   <!--<img [src]="post.meta.image.url" />-->
+  <div class="content full-height bg-light">
+    <div class="post-list">
+      <h1 class="upper-case post-title">{{mainPost.title}}</h1>
+      <div class="left meta-data">
+        <div class="post-date above-below">{{mainPost.date | date: 'dd/MM/yyyy'}}</div>
+        <div><button class="primary">Read the rest on medium</button></div>
+        <div class="share above-below"> Share on </div>
+      </div>
+      <div class="right image-container">
+        <div class="image above-below right" style="background-image: url(/assets/blog-container-post.jpeg)"></div>
+      </div>
+    </div>
+    <div class="freebies-title text-center">
+      <h1>FREEBIES</h1>
+      <h3>SCROLL HERE</h3>
+    </div>
+  </div>
+
 </div>

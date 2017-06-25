@@ -4,11 +4,19 @@
 >
   <div class="full-height d-flex-center flex-wrap work-container">
     <div *ngIf="!project" class="w-80p text-center color-white">
-      <spring-loader></spring-loader>
+      <app-loader></app-loader>
     </div>
     <div *ngIf="project" class="w-50p mw-90p text-center mtext-center">
-      <spring-loader *ngIf="loading"></spring-loader>
-      <img class="mw-90p work-image" [src]="displayImage" [hidden]="loading" (load)="onLoad()" />
+      <app-loader *ngIf="loading"></app-loader>
+      <swiper [config]="config" *ngIf="showSwiper" #usefulSwiper>
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" *ngFor="let image of project.fields.PrimaryImage" [src]="image.url" (load)="onLoad()">
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </swiper>
+      <!--<img class="mw-90p work-image" [src]="displayImage" [hidden]="loading" (load)="onLoad()" />
       <div class="image-nav">
         <div (click)="changeImage(imageId-1)">
           <div class="left alt arrow small" ></div>
@@ -16,7 +24,7 @@
         <div (click)="changeImage(imageId+1)">
           <div class="right alt arrow small" ></div>
         </div>
-      </div>
+      </div>-->
     </div>
     <div *ngIf="project" class="w-40p mw-90p project-content">
       <div class="content max-w-400">
